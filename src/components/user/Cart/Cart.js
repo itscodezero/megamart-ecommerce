@@ -36,7 +36,7 @@ export const Cart = () => {
       <div className="mx-2">{content}</div>
 
       <div className=" m-3 flex justify-center shadow-md px-3 py-4 rounded-md">
-        <Link to="/checkout">
+        <Link to="/checkout" data-testid="lnk-sidebar-checkout">
           <button className="bg-green-800 text-white py-2 px-6 rounded-md">
             CheckOut
           </button>

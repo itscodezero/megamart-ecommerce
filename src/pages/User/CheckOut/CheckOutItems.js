@@ -30,17 +30,18 @@ export const CheckOutItems = ({ item }) => {
         />
       </th>
       <th
-        scope="row"
+        scope="row" data-testid="lbl-product-name"
         className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap"
       >
         {name?.substring(0, 25)}
       </th>
-      <td className="px-6 py-4">${price}</td>
+      <td className="px-6 py-4" data-testid="lbl-product-price">${price}</td>
       <td className="px-6 py-4">
         <div className="flex bg-green-700 rounded-md overflow-hidden">
           <button
             disabled={quantity <= 1}
             className="bg-green-900 text-white py-1 px-3"
+            data-testid="btn-reduce-qnt"
             onClick={() => decreaseProductQtyHandler(_id)}
           >
             {" "}
@@ -51,6 +52,7 @@ export const CheckOutItems = ({ item }) => {
           </span>
           <button
             className="bg-green-900 text-white py-1 px-3"
+            data-testid="btn-increase-qnt"
             onClick={() => increaseProductQtyHandler(_id)}
           >
             {" "}
@@ -59,7 +61,7 @@ export const CheckOutItems = ({ item }) => {
         </div>
       </td>
       <td className="px-6 py-4">${price * quantity}</td>
-      <td className="px-6 py-4 " onClick={() => removeCartItemHandler(_id)}>
+      <td className="px-6 py-4 " onClick={() => removeCartItemHandler(_id)}  data-testid="ico-remove-product">
         <button className="text-red-600">X</button>
       </td>
     </tr>

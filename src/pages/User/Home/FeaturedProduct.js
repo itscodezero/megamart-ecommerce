@@ -37,7 +37,7 @@ export const FeaturedProduct = () => {
 
   if (!isError && !isLoading && products?.length > 0)
     content = products.map((proudct) => (
-      <ProductCard key={proudct._id} product={proudct} />
+      <ProductCard key={proudct._id} product={proudct}  data-testid={`feature-product-${proudct._id}`} />
     ));
 
   return (

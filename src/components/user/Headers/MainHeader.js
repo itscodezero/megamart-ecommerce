@@ -56,7 +56,7 @@ export const MainHeader = () => {
           {/* logo area */}
           <div className="xl:min-w-[300px]">
             <Link to="/">
-              <h1 className="text-2xl text-white font-semibold">MegaMart</h1>
+              <h1 className="text-2xl text-white font-semibold" data-testid="site-name">MegaMart</h1>
             </Link>
           </div>
         </div>
@@ -66,12 +66,13 @@ export const MainHeader = () => {
             <input
               type="search"
               name="search"
+              data-testid="txt-search"
               value={searchValue}
               placeholder="Search Product..."
               className="bg-transparent text-black px-2 py-2 focus:outline-none sm:w-full"
               onChange={(e) => setSearchValue(e.target.value)}
             />
-            <button type="submit" className="pr-3 text-lg text-[#f85606]">
+            <button type="submit" className="pr-3 text-lg text-[#f85606]" data-testid="btn-search">
               <BsSearch />
             </button>
           </div>
@@ -107,6 +108,7 @@ export const MainHeader = () => {
 
               <Link
                 to="/checkout"
+                data-testid="lnk-header-checkout"
                 className="hidden sm:flex items-center hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"
               >
                 <span className="text-base font-medium mr-0 sm:mr-3">
@@ -117,6 +119,7 @@ export const MainHeader = () => {
           ) : (
             <div className="hidden sm:flex items-center">
               <Link
+              data-testid="lnk-header-login"
                 to="/login"
                 className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"
               >
@@ -127,6 +130,7 @@ export const MainHeader = () => {
               </Link>
               <span className="px-1"> |</span>
               <Link
+              data-testid="lnk-header-register"
                 to="/register"
                 className=" hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"
               >
@@ -149,13 +153,13 @@ export const MainHeader = () => {
           {/* cart */}
           <div
             className="flex items-center justify-center cursor-pointer"
-            onClick={cartOpenHandler}
+            onClick={cartOpenHandler} data-testid="lnk-header-cart"
           >
             <span className="text-4xl text-white sm:pb-1 absolute">
               <AiOutlineShopping />
             </span>
             <p className="relative left-1 bottom-4 w-5 h-5 flex items-center justify-center bg-gray-800 text-white rounded-full">
-              <span>{cartItems.length > 0 ? cartItems.length : "0"}</span>
+              <span data-testid="lbl-cart-item-count">{cartItems.length > 0 ? cartItems.length : "0"}</span>
             </p>
           </div>
         </div>

@@ -26,6 +26,7 @@ export const Order = () => {
           label="Your Name"
           type="text"
           name="name"
+          data-testid="txt-name"
           placeholder="Enter your name here"
           required
           value={name}
@@ -35,6 +36,7 @@ export const Order = () => {
           label="Your Email"
           type="email"
           name="email"
+          data-testid="txt-email"
           placeholder="Enter your email here"
           required
           value={email}
@@ -44,6 +46,7 @@ export const Order = () => {
           label="Your Phone Number"
           type="number"
           name="number"
+          data-testid="txt-phone"
           placeholder="Enter your phone number here"
           required
           value={number}
@@ -53,6 +56,7 @@ export const Order = () => {
           label="Your Address"
           type="text"
           name="adress"
+          data-testid="txt-address"
           placeholder="Enter your adress here"
           required
           value={address}

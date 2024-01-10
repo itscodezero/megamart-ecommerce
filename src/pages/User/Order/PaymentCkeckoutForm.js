@@ -66,6 +66,7 @@ export const PaymentCkeckoutForm = ({ shippingInfo }) => {
         <Button
           type="submit"
           name="Pay Now"
+          data-testid="btn-pay-now"
           className="mt-5"
           disabled={!stripe}
         />

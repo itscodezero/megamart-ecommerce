@@ -36,9 +36,9 @@ export const ProductCard = ({ product }) => {
       <div className="p-2 space-y-2">
         <div className="flex justify-between pt-2 font-semibold text-base">
           <Link to={`/product-details/${productSlug}/${_id}`}>
-            <h3>{name?.substring(0, 17)}</h3>
+            <h3 >{name?.substring(0, 17)}</h3>
           </Link>
-          <p>${price}</p>
+          <p data-testid={`price-${_id}`}>${price}</p>
         </div>
         <p className="font-normal text-sm">
           {description?.substring(1, 45)}...
@@ -50,14 +50,14 @@ export const ProductCard = ({ product }) => {
               <FaStar />
             ))}
 
-          <span className="text-gray-500 text-sm font-thin ml-1">
+          <span className="text-gray-500 text-sm font-thin ml-1" data-testid={`rating-${_id}`}>
             ({rating})
           </span>
         </p>
         <div>
           <button
             className="bg-white duration-200 ease-linear hover:bg-orange-600 text-orange-600 hover:text-white border border-orange-600 w-full rounded-md py-1"
-            onClick={() => addToCartHandler(product)}
+            onClick={() => addToCartHandler(product)} data-testid={`add-${_id}`}
           >
             Add To Cart
           </button>
