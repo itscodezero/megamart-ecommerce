@@ -55,7 +55,7 @@ export const ProductDetails = () => {
   //add to cart
   const addToCartHandler = (item) => {
     dispatch(addToCart(item));
-    toast.success("Product Add To Cart");
+    toast.success("Product Added To Cart");
   };
 
   //set ppage title

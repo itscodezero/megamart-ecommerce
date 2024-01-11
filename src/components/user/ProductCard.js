@@ -19,7 +19,7 @@ export const ProductCard = ({ product,testid }) => {
   //add to cart
   const addToCartHandler = (item) => {
     dispatch(addToCart(item));
-    toast.success("Product Add To Cart");
+    toast.success("Product Added To Cart");
   };
 
   return (
