@@ -27,6 +27,7 @@ export const Cart = () => {
         <p className="text-xl uppercase">Cart Items</p>
         <button
           className="text-xl text-red-500"
+          data-testid="close-cart-sidebar"
           onClick={() => dispatch(openCart(false))}
         >
           X

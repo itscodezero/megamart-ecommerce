@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { addToCart } from "../../features/cart/addToCartSlice";
 import createSlug from "../../utils/createSlug";
 
-export const ProductCard = ({ product }) => {
+export const ProductCard = ({ product,testid }) => {
   const { _id, picture, description, price, name } = product || {};
 
   const rating = 5;
@@ -57,7 +57,7 @@ export const ProductCard = ({ product }) => {
         <div>
           <button
             className="bg-white duration-200 ease-linear hover:bg-orange-600 text-orange-600 hover:text-white border border-orange-600 w-full rounded-md py-1"
-            onClick={() => addToCartHandler(product)} data-testid={`add-${_id}`}
+            onClick={() => addToCartHandler(product)} data-testid={testid}
           >
             Add To Cart
           </button>
